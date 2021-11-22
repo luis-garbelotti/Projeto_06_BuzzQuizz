@@ -50,8 +50,6 @@
 
     background-color: #FAFAFA;
 
-    overflow-wrap: break-word;
-
 }
 
 
@@ -81,7 +79,6 @@
     line-height: 25px;
     letter-spacing: 0em;
     text-align: center;
-
 
     border-radius: 300px;
     border: 1px dashed #EC362D;
@@ -133,7 +130,6 @@ h2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    overflow-wrap: break-word;
     
 }
 
@@ -173,15 +169,17 @@ h2 {
     display: flex;
     align-items: end;
     
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) , black);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) , #000000);
     
+    overflow-wrap: anywhere;
+
 }
 
 
 .degrade p {
 
-    width: 300px;
-    height: auto;
+    width: 100%;
+    height: 69px;
 
     display: flex;
     align-items: center;
@@ -213,8 +211,6 @@ h2 {
     background-color: #FAFAFA;
     position: relative;
     
-    overflow-wrap: break-word;
-
 }
 
 
@@ -237,7 +233,6 @@ h2 {
     top: 0;
     left: 0;
 
-
     font-size: 39px;
     font-weight: 400;
     color: #ffffff;
@@ -245,7 +240,7 @@ h2 {
     width: 100%;
     height: 227px;
 
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), black);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) );
 
 }
 
@@ -253,7 +248,7 @@ h2 {
 .perguntas {
     
     width: 759px;
-    height: 676px;
+    height: auto;
     margin-top: 42px;
 
     padding: 28px 36px 35px 36px;
@@ -273,13 +268,15 @@ h2 {
 
     width: 689px;
     height: 138px;
-
+    padding: 8px;
     font-size: 23px;
     font-weight: 700;
 
     color: #ffffff;
 
     border-radius: 1px;
+    
+    overflow-wrap: anywhere;
 
 }
 
@@ -293,6 +290,7 @@ h2 {
     
     flex-wrap: wrap;
 
+    overflow-wrap: anywhere;
 }
 
 
@@ -366,6 +364,8 @@ li img {
 
     background-color: #EC362D;
 
+    overflow-wrap: anywhere;
+
 }
 
 .acertoFinal p {
@@ -389,6 +389,8 @@ li img {
 
     display: flex;
 
+    overflow-wrap: anywhere;
+
 }
 
 
@@ -397,12 +399,14 @@ li img {
     width: 364px;
     height: auto;
 
+    box-shadow: 0 0 4px #dedede;
+
 }
 
 .descricao p {
 
     width: 353px;
-    margin-left: 10px;
+    margin-left: 18px;
 
     font-size: 19px;
     font-weight: 700;
@@ -500,6 +504,7 @@ button#home {
         width: 100%;
         height: 89px;
         font-size: 19px;
+        
     }
 
     .perguntas ul {
