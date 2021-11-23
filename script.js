@@ -29,7 +29,7 @@ function imprimirQuizz(quizzes){
     for (let i=0; i < quizzes.length; i++) {
 
         const listaDosQuizzes = document.querySelector(".lista-quizz-recebido");
-        listaDosQuizzes.innerHTML += `<li id="${quizzes[i].id}" class="quizz ponteiro" onclick="obterUnicoQuizz(this)"> 
+        listaDosQuizzes.innerHTML += `<li id="${quizzes[i].id}" class="quizz ponteiro" onclick="obterUnicoQuizz(this)" data-identifier="quizz-card"> 
                                             <img src="${quizzes[i].image}">
                                             <div class="degrade">
                                                     <p>${quizzes[i].title}</p>
@@ -62,8 +62,8 @@ function comparador() {
 
 
 function mostrarUnicoQuizz(respostaUnicoQuizz) {
-    
     conteudoQuizz = respostaUnicoQuizz.data;
+    console.log(conteudoQuizz);
     
     let respostas;
     unicoQuizz = document.querySelector(".pagina-quizz");
@@ -79,22 +79,20 @@ function mostrarUnicoQuizz(respostaUnicoQuizz) {
         
         unicoQuizz.innerHTML += `
                                 <div id="9${i}" class="perguntas transicao">
-                                    <div id="${i}" class="texto-pergunta display-flex transicao">
+                                    <div id="${i}" class="texto-pergunta display-flex transicao" data-identifier="question">
                                         <p>${conteudoQuizz.questions[i].title}</p>
                                     </div>
                                     <ul class="todas-alternativas${i} lista">
                                     
                                     </ul>`;
 
-        corAleatoria();
-
-        document.getElementById([i]).style.backgroundColor = cor;
+        document.getElementById([i]).style.backgroundColor = `${conteudoQuizz.questions[i].color}`;
                                     
         for(j = 0; j < conteudoQuizz.questions[i].answers.length; j++) {
 
             respostas = document.querySelector(".todas-alternativas" + i);
             let variavelAuxiliar = `
-                                        <li id="${i}${j}" class="alternativa ponteiro transicao" onclick="selecionaResposta(this)">
+                                        <li id="${i}${j}" class="alternativa ponteiro transicao" onclick="selecionaResposta(this)" data-identifier="answer">
                                             <img src="${conteudoQuizz.questions[i].answers[j].image}" >
                                             <p> ${conteudoQuizz.questions[i].answers[j].text} </p>
                                         </li>
@@ -112,19 +110,6 @@ function mostrarUnicoQuizz(respostaUnicoQuizz) {
         }  
     }
     reiniciando = unicoQuizz.innerHTML;
-}
-
-
-function corAleatoria() {
-
-    var letras = '0123456789ABCDEF';
-    cor = '#';
-
-    for (var i = 0; i < 6; i++) {
-        cor += letras[Math.floor(Math.random() * 16)];
-    }
-    return cor;
-
 }
 
 
@@ -160,7 +145,6 @@ function selecionaResposta ( respostaEscolhida ) {
         
         } 
     }
-
     
     perguntasRespondidas++;
     setTimeout(scrollProximaPergunta, 2000);
@@ -204,7 +188,7 @@ function resultadoQuizz() {
         }
         
         unicoQuizz.innerHTML += `   
-                                    <div class="resultado transicao"> 
+                                    <div class="resultado transicao" data-identifier="quizz-result"> 
                                         <div class="acertoFinal display-flex transicao">
                                             <p>${pontuacao}% de acerto: ${textoPontuacao}</p>
                                         </div>

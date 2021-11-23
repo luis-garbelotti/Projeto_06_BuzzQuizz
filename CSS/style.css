@@ -483,9 +483,12 @@ button#home {
         align-items: center;
 
         overflow-wrap: break-word;
+        
     }
+    
 
     .pagina-quizz {
+
         padding-top: 130px;
         
     }

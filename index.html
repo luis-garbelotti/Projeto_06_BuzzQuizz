@@ -28,15 +28,15 @@
             <div class="criar-quizz display-flex transicao">
                 <p>Você não criou nenhum 
                     <br>quizz ainda :(</p>
-                <button class="ponteiro">Criar Quizz</button>
+                <button class="ponteiro" data-identifier="create-quizz">Criar Quizz</button>
             </div>
 
-            <ul class="lista-quizz-usuario escondido"> LISTA COM QUIZZ CRIADOS PELO USUARIO </ul>
+            <ul class="lista-quizz-usuario escondido" data-identifier="user-quizzes"> ADD LISTA COM QUIZZ CRIADOS PELO USUARIO </ul>
             
             <div class="letreiro-quizz">
                 <h2>Todos os Quizzes</h2>
             </div>
-            <ul class="lista-quizz-recebido transicao">
+            <ul class="lista-quizz-recebido transicao" data-identifier="general-quizzes">
                 
             </ul>
         </div>
@@ -47,5 +47,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
+    
 </body>
 </html>
